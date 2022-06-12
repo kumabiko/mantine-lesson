@@ -22,19 +22,20 @@ export const useQueryPerformance = () => {
           user_id: payload.new.user_id,
           level: payload.new.level,
         })
-        showNotification({
-          title: 'Someone updated the performances table',
-          message: payload.new.user_id,
-          icon: <DatabaseExport />,
-          color: 'teal',
-          autoClose: 3000,
-        })
+        // showNotification({
+        //   title: 'Someone updated the performances table',
+        //   message: payload.new.user_id,
+        //   icon: <DatabaseExport />,
+        //   color: 'teal',
+        //   autoClose: 3000,
+        // })
       })
       .on('DELETE', (payload: SupabaseRealtimePayload<Performance>) => {
         queryClient.setQueryData(['performance'], null)
       })
       .subscribe()
 
+    // Unsubscribeする関数
     const removeSubscription = async () => {
       await supabase.removeSubscription(subsc)
     }
@@ -42,6 +43,7 @@ export const useQueryPerformance = () => {
       removeSubscription()
     }
   }, [queryClient])
+
   const getPerformance = async () => {
     const { data, error } = await supabase
       .from('performances')

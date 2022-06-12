@@ -28,6 +28,7 @@ const Performance = () => {
   const [durability, setDurability] = useState<number | undefined>(0)
   const [comfort, setComfort] = useState<number | undefined>(0)
   const [luck, setLuck] = useState<number | undefined>(0)
+
   useEffect(() => {
     setEfficiency(data?.efficiency)
     setLevel(data?.level)
@@ -190,6 +191,7 @@ const Performance = () => {
             className={'my-10 w-96'}
             value={level}
             onChange={setLevel}
+            // 操作が終わったタイミングで更新
             onChangeEnd={(value) => {
               updateHandler(value, 'level')
             }}
