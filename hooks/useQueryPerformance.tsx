@@ -22,13 +22,13 @@ export const useQueryPerformance = () => {
           user_id: payload.new.user_id,
           level: payload.new.level,
         })
-        // showNotification({
-        //   title: 'Someone updated the performances table',
-        //   message: payload.new.user_id,
-        //   icon: <DatabaseExport />,
-        //   color: 'teal',
-        //   autoClose: 3000,
-        // })
+        showNotification({
+          title: 'Someone updated the performances table',
+          message: payload.new.user_id,
+          icon: <DatabaseExport />,
+          color: 'teal',
+          autoClose: 3000,
+        })
       })
       .on('DELETE', (payload: SupabaseRealtimePayload<Performance>) => {
         queryClient.setQueryData(['performance'], null)

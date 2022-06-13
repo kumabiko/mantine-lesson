@@ -15,7 +15,7 @@
     "@mantine/form": "^4.2.8",
     "@mantine/hooks": "^4.2.8",
     "@mantine/next": "^4.2.8",
-    "@mantine/notifications": "^4.2.8",
+    "@mantine/notifications": "^4.2.9",
     "@supabase/supabase-js": "^1.35.3",
     "axios": "^0.27.2",
     "date-fns": "^2.28.0",
